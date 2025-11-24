@@ -1,0 +1,73 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "Рахим Стерлинг перешел в Арсенал на правах аренды",
+      "date": "03.09.2025",
+      "category": "ппп"
+    },
+    {
+      "id": 2,
+      "title": "Дембеле выиграл золотой мяч",
+      "date": "23.09.2025",
+      "category": "Футбол"
+    },
+    {
+      "id": 3,
+      "title": "Рахим Стерлинг перешел в Арсенал на правах аренды",
+      "date": "03.09.2025",
+      "category": "Футбол"
+    },
+    {
+      "id": 4,
+      "title": "Дембеле выиграл золотой мяч",
+      "date": "23.09.2025",
+      "category": "Футбол"
+    },
+    {
+      "id": 5,
+      "title": "Рахим Стерлинг перешел в Арсенал на правах аренды",
+      "date": "03.09.2025",
+      "category": "Футбол"
+    },
+    {
+      "id": 6,
+      "title": "Дембеле выиграл золотой мяч",
+      "date": "23.09.2025",
+      "category": "Футбол"
+    },
+    {
+      "id": 7,
+      "title": "Рахим Стерлинг перешел в Арсенал на правах аренды",
+      "date": "03.09.2025",
+      "category": "Футбол"
+    },
+    {
+      "id": 8,
+      "title": "Дембеле выиграл золотой мяч",
+      "date": "23.09.2025",
+      "category": "Футбол"
+    }
+  ],
+  "details": [
+    {
+      "id": 1,
+      "title": "Рахим Стерлинг перешел в Арсенал на правах аренды",
+      "date": "03.09.2025",
+      "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+      "image": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&h=600&fit=crop",
+      "source": "Fabrizio Romano",
+      "category": "Футбол"
+    }
+  ],
+  "categories": [
+    { "id": 1, "title": "Все новости" },
+    { "id": 2, "title": "Футбол" },
+    { "id": 3, "title": "Баскетбол" },
+    { "id": 4, "title": "Регби" },
+    { "id": 5, "title": "Хоккей" },
+    { "id": 6, "title": "Киберспорт" },
+    { "id": 7, "title": "Бокс" },
+    { "id": 8, "title": "Mix Fight" }
+  ]
+}

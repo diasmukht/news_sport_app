@@ -1,0 +1,97 @@
+/* src/assets/styles/PostForm.css */
+
+.postform-container {
+  padding-top: 70px;
+  min-height: 100vh;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.postform-title {
+  background-color: #10b981;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: 500;
+  ;
+  position: fixed;
+  top: 94px;
+  left: 0;
+  right: 0;
+  z-index: 900;
+}
+
+.postform-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 44px 16px;
+}
+
+.postform-input {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.postform-button {
+  padding: 14px 32px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.postform-button:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.postform-message-success {
+  color: #166534;
+  background-color: #f0fdf4;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #bbf7d0;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.postform-message-error {
+  color: #dc2626;
+  background-color: #fef2f2;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.postform-list-title {
+  font-size: 20px;
+  margin: 32px 0 16px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.postform-post-item {
+  background: white;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.postform-loader {
+  text-align: center;
+  padding: 40px;
+}

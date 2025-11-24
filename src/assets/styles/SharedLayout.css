@@ -1,0 +1,63 @@
+/* src/assets/styles/SharedLayout.css */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #353535;
+  padding: 16px;
+  z-index: 1000;
+  height: 64px;
+  
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  margin: 10px 0 10px 30px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100vh;
+  background: #353535;
+  transition: left 0.3s ease;
+  z-index: 1100;
+  padding-top: 80px;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.nav-link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 16px 24px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  
+  background: #ff6060;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1050;
+}
+
+.page-content {
+  padding-top: 94px; 
+  min-height: 100vh;
+}

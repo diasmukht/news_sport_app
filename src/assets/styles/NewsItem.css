@@ -1,0 +1,31 @@
+.news-item {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 24px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-color: #fff;
+}
+
+.news-item.hovered {
+  background-color: #f9fafb;
+}
+
+.news-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.news-date {
+  font-size: 16px;
+  color: #808080;
+  margin-bottom: 4px;
+}
+
+.news-category {
+  font-size: 16px;
+  color: #808080;
+  font-weight: 400;
+}
