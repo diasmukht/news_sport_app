@@ -8,7 +8,7 @@ const SharedLayout = () => {
 
   return (
     <>
-      {/* ТВОЙ ФИКСИРОВАННЫЙ ХЕДЕР С БУРГЕРОМ */}
+      {/* */}
       <header className="header">
         <button
           className="menu-button"
@@ -18,7 +18,7 @@ const SharedLayout = () => {
         </button>
       </header>
 
-      {/* БОКОВОЕ МЕНЮ */}
+      {/* МЕНЮ */}
       <div className={`sidebar ${isOpen ? 'open' : ''}`}>
         <nav>
           <NavLink to="/" className="nav-link" onClick={() => setIsOpen(false)}>Главная</NavLink>
@@ -27,7 +27,7 @@ const SharedLayout = () => {
         </nav>
       </div>
 
-      {/* Тёмный фон при открытом меню */}
+      {/* Тёмный фон  */}
       {isOpen && <div className="overlay" onClick={() => setIsOpen(false)} />}
 
       {/* Контент страницы */}
