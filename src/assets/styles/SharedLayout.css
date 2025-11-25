@@ -7,7 +7,7 @@
   background-color: #353535;
   padding: 16px;
   z-index: 1000;
-  height: 44px;
+  height: 64px;
   
 }
 
@@ -15,7 +15,7 @@
   background: none;
   border: none;
   color: #fff;
-  font-size: 26px;
+  font-size: 32px;
   cursor: pointer;
   margin: 10px 0 10px 30px;
 }
