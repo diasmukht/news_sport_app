@@ -11,3 +11,11 @@ function App() {
 }
 
 export default App;
+
+
+
+// git add .
+
+// git commit -m "обновил детали статьи"
+
+// git push

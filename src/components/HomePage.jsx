@@ -1,4 +1,4 @@
-// src/components/HomePage.jsx
+
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -18,7 +18,7 @@ const HomePage = () => {
 
   const navigate = useNavigate();
 
-  // Загружаем все новости один раз
+  // Загр новости
   useEffect(() => {
     const fetchNews = async () => {
       try {
@@ -34,7 +34,7 @@ const HomePage = () => {
     fetchNews();
   }, []);
 
-  // Фильтрация при изменении query в URL
+  // Фильтрация 
   useEffect(() => {
     if (!query) {
       setFilteredNews(news);
@@ -80,7 +80,7 @@ const HomePage = () => {
         {query ? `Результаты поиска: «${query}»` : 'Все новости'}
       </div>
 
-      {/* Минималистичная строка поиска */}
+      {/* строка поиска */}
       <div className="homepage-search-wrapper">
         <form onSubmit={handleSearch} className="homepage-search-form">
           <input

@@ -77,15 +77,16 @@ const NewsDetail = () => {
       <div className="content">
         <h1 className="title">{article.title}</h1>
         <p className="date">{article.date}</p>
+        
+        <div
+          className="text"
+          dangerouslySetInnerHTML={{ __html: article.content.replace(/\n/g, '<br>') }}
+        />
 
         {article.image && (
           <img src={article.image} alt={article.title} className="image" />
         )}
 
-        <div
-          className="text"
-          dangerouslySetInnerHTML={{ __html: article.content.replace(/\n/g, '<br>') }}
-        />
 
         {article.source && (
           <p className="source">
