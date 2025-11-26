@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate, useLocation} from 'react-router-dom';
 import axios from 'axios';
 import { ClipLoader } from 'react-spinners';
 import NewsItem from './NewsItem';
@@ -12,7 +12,7 @@ const HomePage = () => {
   const [news, setNews] = useState([]);
   const [filteredNews, setFilteredNews] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('search')?.trim() || '';
 
@@ -60,7 +60,8 @@ const HomePage = () => {
   };
 
   const handleNewsClick = (id) => {
-    navigate(`/news/${id}`);
+    navigate(`/news/${id}`, { 
+    state: { from: location.pathname + location.search }});
   };
 
   if (loading) {
@@ -132,3 +133,8 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
+
+// use location, post, авторизация, usenavigate('/') после авторизации. AuthForm, AuthContext, включить Авторизация, Регистрация, Загрузка файлов в mokky.dev
+// корзина

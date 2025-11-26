@@ -1,4 +1,6 @@
+// src/components/CommentForm.jsx
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '../assets/styles/CommentForm.css';
 
 const API_URL = 'https://eaa0f823bdcaf00e.mokky.dev/comments';
@@ -7,6 +9,9 @@ export default function CommentForm({ newsId, onCommentAdded }) {
   const [author, setAuthor] = useState('');
   const [text, setText] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation(); // ← запоминаем, откуда пришли
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,6 +35,12 @@ export default function CommentForm({ newsId, onCommentAdded }) {
         onCommentAdded(newComment);
         setAuthor('');
         setText('');
+
+        // Программная навигация с useNavigate — как в слайдах!
+        navigate(location.pathname, {
+          replace: true,
+          state: { scrollToComments: true } // флаг для прокрутки
+        });
       }
     } catch (err) {
       console.error('Ошибка отправки комментария:', err);
@@ -57,6 +68,7 @@ export default function CommentForm({ newsId, onCommentAdded }) {
           value={text}
           onChange={(e) => setText(e.target.value)}
           required
+          rows="4"
           className="commentform-textarea"
         />
         

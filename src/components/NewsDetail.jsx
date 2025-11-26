@@ -1,13 +1,11 @@
-
+// src/components/NewsDetail.jsx
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { ClipLoader } from 'react-spinners';
 
-
 import CommentForm from './CommentForm';
 import CommentItem from './CommentItem';
-
 import '../assets/styles/NewsDetail.css';
 
 const COMMENTS_API = 'https://eaa0f823bdcaf00e.mokky.dev/comments';
@@ -15,12 +13,13 @@ const COMMENTS_API = 'https://eaa0f823bdcaf00e.mokky.dev/comments';
 const NewsDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation(); // ← добавили для прокрутки и возврата
 
   const [article, setArticle] = useState(null);
-  const [comments, setComments] = useState([]);      
+  const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
 
-
+  // Загрузка статьи и комментариев
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -43,6 +42,17 @@ const NewsDetail = () => {
     fetchData();
   }, [id]);
 
+  // Плавная прокрутка к комментариям после отправки
+  useEffect(() => {
+    if (location.state?.scrollToComments) {
+      const element = document.getElementById('comments-section');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        // Чистим state, чтобы при F5 не прокручивалось снова
+        window.history.replaceState({}, document.title);
+      }
+    }
+  }, [location]);
 
   const handleCommentAdded = (newComment) => {
     setComments(prev => [newComment, ...prev]);
@@ -51,7 +61,7 @@ const NewsDetail = () => {
   if (loading) {
     return (
       <div className="loader">
-        <ClipLoader color="#808080" size={60} />
+        <ClipLoader color="#6366f1" size={60} />
       </div>
     );
   }
@@ -67,13 +77,13 @@ const NewsDetail = () => {
   return (
     <div className="container">
 
-      {/* Кнопка Назад */}
+      {/* Кнопка "Назад" */}
       <div className="back-section" onClick={() => navigate(-1)}>
         <span className="back-arrow">←</span>
         <span className="back-text">Назад</span>
       </div>
 
-      {/* Основной контент */}
+      {/* Основной контент статьи */}
       <div className="content">
         <h1 className="title">{article.title}</h1>
         <p className="date">{article.date}</p>
@@ -86,7 +96,6 @@ const NewsDetail = () => {
         {article.image && (
           <img src={article.image} alt={article.title} className="image" />
         )}
-
 
         {article.source && (
           <p className="source">
@@ -102,18 +111,18 @@ const NewsDetail = () => {
         )}
 
         {/* === КОММЕНТАРИИ === */}
-        <div style={{ marginTop: '60px' }}>
-          <h2 style={{ fontSize: '24px', marginBottom: '20px', color: '#1f2937' }}>
+        <div id="comments-section" style={{ marginTop: '80px', paddingTop: '20px' }}>
+          <h2 style={{ fontSize: '28px', marginBottom: '32px', color: '#1e293b', fontWeight: 'bold' }}>
             Комментарии ({comments.length})
           </h2>
 
-          {/* Форма добавления комментария */}
+          {/* Форма комментария */}
           <CommentForm newsId={id} onCommentAdded={handleCommentAdded} />
 
           {/* Список комментариев */}
           {comments.length === 0 ? (
-            <p style={{ textAlign: 'center', color: '#94a3b8', padding: '40px 0' }}>
-              Пока нет комментариев. Будьте первым!
+            <p style={{ textAlign: 'center', color: '#94a3b8', padding: '60px 0', fontSize: '18px' }}>
+              Пока нет комментариев. Станьте первым!
             </p>
           ) : (
             comments.map(comment => (
